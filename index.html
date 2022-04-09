@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="./css/task2.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+
+    <!-- JQuery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Scalability -->
+    <!-- <div class="scaleable-wrapper" id="scaleable-wrapper"> -->
+    <div class="wrapper" id="wrapper">
+
+        <div id="blur" class="container mt-1 d-flex justify-content-center align-items-center">
+
+            <!-- <div style="-webkit-transform:scale(0.5);left:380px;top:0px;"> -->
+
+            <div class="col-10">
+
+                <!--  Header -->
+                <div class="row blur">
+                    <div class="col-9">
+                        <span>Circle, choose and write.</span>
+                    </div>
+
+                    <div class="col-1 iconsBox" onclick="showDummyImage()">
+                        <img src="./assets/images/resourse_icon.png" class="img-fluid">
+                    </div>
+
+                    <div class="col-1 iconsBox pull-right" onclick="showHelpContent()">
+                        <img src="./assets/images/help_icon.png" class="img-fluid">
+                    </div>
+                </div>
+
+                <!-- Main Task Part -->
+                <div class="row text-center">
+
+                    <!-- <div class="blueBackground"></div> -->
+
+                    <!-- Dummy Image -->
+                    <div id="dummyImageDiv" class="row whiteBackground">
+                        <div id="closeBtn" class="iconsBox" onclick="hideDummyImage()">
+                            <img src="./assets/images/close_icon.png" class="img-fluid">
+                        </div>
+                        <img id="dummyImage" src="./assets/images/dummy.jpg" class="img-fluid">
+                    </div>
+
+                    <!-- Help Content -->
+                    <div id="helpContentDiv" class="row whiteBackground">
+                        <div id="closeBtn" class="iconsBox" onclick="hideHelpContent()">
+                            <img src="./assets/images/close_icon.png" class="img-fluid">
+                        </div>
+                        Help content goes here
+                    </div>
+
+                    <!-- Carousel -->
+                    <div id="carousel" class="carousel slide" data-bs-interval="false" data-bs-ride="carousel">
+                        <div class="carousel-inner whiteBackground pb-2">
+
+                            <!-- First Task -->
+                            <div class="carousel-item active" data-slide-number="1">
+                                <img src="./assets/images/1.png" class="img-fluid">
+                                <div class="mb-1">
+                                    <span>What's </span>
+                                    <span class="choosesBox" id="correctAnswer11"
+                                    onclick="validateAnswer(1,'this')">this</span>
+                                    <span style="display: none;" id="correctIcon11"><img class="correctTick img-fluid"
+                                            src="./assets/images/tikMark.png"></span>
+
+                                    <span class="fw-bold"> / </span>
+
+                                    <span class="choosesBox" id="wrongAnswer11" onclick="validateAnswer(1,'that')">that</span>
+                                    <span style="display: none;" id="wrongIcon11"><img class="crossMark img-fluid"
+                                            src="./assets/images/crossMark.png"></span>
+                                    <span> ?</span>
+                                </div>
+                                <div>
+                                    <span class="choosesBox" id="correctAnswer12"
+                                    onclick="validateAnswer(2,`It's`)">It's</span>
+                                    <span style="display: none;" id="correctIcon12"><img class="correctTick img-fluid"
+                                            src="./assets/images/tikMark.png"></span>
+
+                                    <span class="fw-bold"> / </span>
+
+                                    <span class="choosesBox" id="wrongAnswer12" onclick="validateAnswer(2,`They're`)">They're</span>
+                                    <span style="display: none;" id="wrongIcon12"><img class="crossMark img-fluid"
+                                            src="./assets/images/crossMark.png"></span>
+                                    <span> an orange school bag.</span>
+                                </div>
+                            </div>
+
+                            <!-- Second Task -->
+                            <div class="carousel-item" data-slide-number="2">
+                                <img src="./assets/images/2.png" class="img-fluid">
+                                <div class="mb-1">
+                                    <span>What are </span>
+                                    <span class="choosesBox" id="wrongAnswer21" onclick="validateAnswer(3,'these')">these</span>
+                                    <span style="display: none;" id="wrongIcon21"><img class="crossMark img-fluid"
+                                            src="./assets/images/crossMark.png"></span>
+
+                                    <span class="fw-bold"> / </span>
+
+                                    <span class="choosesBox" id="correctAnswer21"
+                                        onclick="validateAnswer(3,'those')">those</span>
+                                    <span style="display: none;" id="correctIcon21"><img class="correctTick img-fluid"
+                                            src="./assets/images/tikMark.png"></span>
+                                    <span> ?</span>
+                                </div>
+                                <div>
+                                    <span class="choosesBox" id="wrongAnswer22" onclick="validateAnswer(4,`It's`)">It's</span>
+                                    <span style="display: none;" id="wrongIcon22"><img class="crossMark img-fluid"
+                                            src="./assets/images/crossMark.png"></span>
+
+                                    <span class="fw-bold"> / </span>
+
+                                    <span class="choosesBox" id="correctAnswer22"
+                                        onclick="validateAnswer(4,`They're`)">They're</span>
+                                    <span style="display: none;" id="correctIcon22"><img class="correctTick img-fluid"
+                                            src="./assets/images/tikMark.png"></span>
+                                    <span> green pens.</span>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">3</div>
+                            <div class="carousel-item">4</div>
+                            <div class="carousel-item">5</div>
+                            <div class="carousel-item">6</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="row footer blur">
+                    <div class="col-1">
+                        <!-- Replay -->
+                        <div class="iconsBox">
+                            <img src="./assets/images/replay_icon.png" id="replay">
+                        </div>
+                    </div>
+
+                    <div class="col-11 d-flex">
+
+                        <!-- Sounds -->
+                        <audio id="correctSound">
+                            <source src="./assets/sounds/correctSound.wav">
+                        </audio>
+                        <audio id="wrongSound">
+                            <source src="./assets/sounds/wrongSound.mp3">
+                        </audio>
+
+                        <!-- Control Icons -->
+                        <div class="iconsBox">
+                            <img src="./assets/images/reload_icon.png" class="img-fluid" onclick="reload()">
+                        </div>
+
+                        <div class="showAnsIconBox" id="eyeIcon">
+                            <img src="./assets/images/showAns_icon.png" class="img-fluid"
+                                onclick="showCorrectAnswers()">
+                        </div>
+
+                        <div class="iconsBox" id="prevBtn">
+                            <div type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                                <img src="./assets/images/back_icon.png" class="img-fluid">
+                            </div>
+                        </div>
+
+                        <div class="pageNumberBox">
+                            <div class="pageNumber"></div>
+                        </div>
+
+                        <div class="iconsBox" id="nextBtn">
+                            <div type="button" data-bs-target="#carousel" data-bs-slide="next">
+                                <img src="./assets/images/next_icon.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+
+
+
+    <!-- JS File -->
+    <script src="./js/task2.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

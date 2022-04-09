@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Font */
+span {
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    /* font-size: 45px; */
+    /* font-weight: 500; */
+    font-weight: 400;
+    user-select: none;
+}
+
+#preloader {
+    background: white url(../assets/images/Preloader_2.gif) no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+/* .scaleable-wrapper {
+    padding: 20px;
+    resize: both;
+    position: relative;
+    height: 400px;
+} */
+
+/* .container {
+    width: 600px;
+    height: 400px;
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+} */
+
+#wrapper {
+    position: relative;
+}
+
+#dummyImageDiv {
+    display: none;
+    height: 460px;
+    overflow: auto;
+}
+
+#helpContentDiv {
+    display: none;
+    height: 460px;
+    overflow: auto;
+}
+
+#container:before {
+    position: absolute;
+} 
+
+.iconsBox {
+    margin: 1%;
+    width: 8%;
+    cursor: pointer;
+}
+
+.showAnsIconBox {
+    margin: 1%;
+    width: 10%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.blueBackground {
+    background-color: #0fa0c5;
+    height: 710.4px;
+    /* top: .9375pc; */
+    /* left: 0; */
+    /* position: absolute; */
+    width: 100%;
+    /* float: left; */
+}
+
+.whiteBackground {
+    background-color: white;
+    /* height: 725.4px; */
+    border: 3px solid orange;
+    border-radius: 15px;
+    position: relative;
+}
+
+.choosesBox {
+    background-color: #0fa0c5;
+    color: white;
+    border-radius: 5px;
+    padding: 2px;
+    margin: 2px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.footer {
+    background-color: #DEECF6;
+}
+
+.pageNumberBox {
+    text-align: center;
+    width: 13%;
+    display: inline-block;
+    background-color: white;
+    border: 2px solid #0fa0c5;
+    border-radius: 10px;
+    font-weight: bold;
+    height: 57pt;
+    line-height: 51pt;
+    user-select: none;
+    margin: 1%;
+    margin-left: 2%;
+}
+
+.correctTick {
+    width: 37.5pt;
+    height: 37.5pt;
+}
